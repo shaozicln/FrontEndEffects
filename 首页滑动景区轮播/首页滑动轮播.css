@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 5%;
+    background: transparent;
+    display:flex;
+    justify-content:right;
+    align-items: center;
+    height:30px;
+    color:rgb(255, 255, 255);
+    z-index: 100;
+    font-size: 40px;
+}
+
+.link{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:40px;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #ccc,
+    0 6px 1px rgba(0, 0, 0, .1),
+    0 0px 5px rgba(0, 0, 0, .1),
+    0 1px 3px rgba(0, 0, 0, .3),
+    0 3px 5px rgba(0, 0, 0, .2),
+    0 10px 10px rgba(0, 0, 0, .2),
+    0 20px 20px rgba(0, 0, 0, .15);
+}
+
+.link h3{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.con{
+    position: relative;
+    width: 100%;
+    height:100vh;
+    overflow: hidden;
+}
+
+.slider .slide{
+    position: absolute;
+    width:100%;
+    height:100%
+}
+
+.slide img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* 用于指定图片在其容器中的尺寸和位置。它确保图片填充整个容器，并且通过裁剪或缩放来保持其宽高比例，以便完全覆盖容器。 */
+    object-fit: cover;
+    /* 用于指定元素是否响应鼠标事件。在这里设置为 "none" 表示该元素忽略鼠标事件，即不会触发鼠标事件，例如点击或悬停。 */
+    pointer-events: none;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.slide.active img{
+    opacity: 1;
+}
+
+.slide .left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    /* background: red; */
+    transform: translateX(-100%);
+    transition: 0;
+}
+
+.slide.active .left{
+    transform: translateX(0);
+    z-index: 1;
+    transition: 1s ease;
+}
+
+/* 透明模糊背景 */
+.left #layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* 通过模糊效果来调整元素的背景。在这个例子中，它使用了模糊半径为20像素的效果。 */
+    backdrop-filter: blur(20px);
+    /* -webkit-backdrop-filter: blur(20px); */
+    -webkit-mask: linear-gradient(#000 0 0) ,linear-gradient(#000 0 0);
+    -webkit-mask-clip: text, padding-box;
+    -webkit-mask-composite: xor;
+    /* mask: linear-gradient(#000 0 0) , linear-gradient(#000 0 0); */
+    /* mask-clip: text, padding-box; */
+    /* mask-composite: xor; */
+    /* padding-right: 10px; */
+}
+
+#layer h1 {
+    font-size: 200px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.left #left-text{
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    color: #fff;
+}
+
+#left-text h3 {
+    font-size: 20px;
+}
+
+#left-text p {
+    font-size: 16px;
+    margin: 10px 10px 15px 0px;
+}
+
+#left-btn{
+    display: inline-block;
+    padding: 13px 28px;
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    font-weight: 600;
+    color: #444;
+    font-size: 16px;
+    transition: all .3s linear;
+}
+
+#left-text #left-btn:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.slide .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+    transition: 0s;
+}
+
+.slide.active .right {
+    transform: translateX(0);
+    transition: 1s ease;
+}
+
+.right h1 {
+    font-size: 200px;
+    color: #fff;
+    text-shadow:
+        0 1px 0 #ccc,
+        0 2px 0 #c9c9c9,
+        0 3px 0 #bbb,
+        0 4px 0 #b9b9b9,
+        0 5px 0 #aaa,
+        0 6px 1px rgba(0, 0, 0, .1),
+        0 0px 5px rgba(0, 0, 0, .1),
+        0 1px 3px rgba(0, 0, 0, .3),
+        0 3px 5px rgba(0, 0, 0, .2),
+        0 5px 10px rgba(0, 0, 0, .25),
+        0 10px 10px rgba(0, 0, 0, .2),
+        0 20px 20px rgba(0, 0, 0, .15);
+}
+
+.right h3 {
+    position: absolute;
+    font-size: 80px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    transform: translateY(200%);
+    margin-left: 10px;
+}
+
+.navi {
+    position: absolute;
+    bottom: 8%;
+    right: 5%;
+    z-index: 100;
+}
+
+.navi span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin-left: 25px;
+    transition: .3s;
+}
+
+.navi span:nth-child(1) {
+    background: transparent;
+}
+
+.navi span:nth-child(1):hover {
+    background: #fff;
+}
+
+.searchtb{
+    color:#00000085 !important;
+    font-size: 45px !important;   
+    transition: .4s !important;
+} 

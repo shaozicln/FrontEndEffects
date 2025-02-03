@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+}
+
+.compare{
+    display:grid;
+}
+
+/* * 通配符选择了.compare下的所有子元素，不论其具体的标签名称是什么。 */
+.compare * {
+    width: 800px;
+    grid-area:1/1;
+}
+
+.compare section{
+    display:grid;
+    /* place-content: center; 的意思是将项目在交叉轴和主轴上都居中对齐。 */
+    place-content:center;
+}
+
+.before{
+    /* 定义元素的裁剪区域inset(顶部的偏移值、右侧的偏移值、底部的偏移值、左侧的偏移值)*/
+    /* 100%减去一个自定义变量--pos的值（如果--pos没有定义，则使用50%作为默认值） */
+    clip-path: inset(0 calc(100% - var(--pos,50%)) 0 0);
+}
+
+.after{
+    clip-path: inset(0 0 0 var(--pos,50%));
+}
+
+#range{
+    z-index: 1;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#range::-webkit-slider-thumb{
+    appearance: none;
+    width:5px;
+    height:100vh;
+    background-color: #000;
+}

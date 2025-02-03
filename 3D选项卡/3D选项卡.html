@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D选项卡</title>
+    <link rel="stylesheet" href="./3D选项卡.css">
+    <script src="./3D选项卡.js"></script>
+</head>
+
+<body>
+    <script>
+        function aaclick(xx) {
+            let x = document.getElementById(xx);
+            if (x && x.getAttribute("href")) {
+                window.location.href = x.getAttribute("href");
+            }
+            else {
+                alert("还没写，要不你帮我想想？");
+            }
+        }
+    </script>
+    <div id="link">
+        <a id="link1" href="./主页.html"></a>
+        <a id="link2" href="./3D-符华.html"></a>
+        <a id="link3" href="./3D-黑瞎子.html"></a>
+        <a id="link4" href="./3D-渚薰.html"></a>
+        <!-- <a id="link5" href="./3D-强尼.html"></a> -->
+    </div>
+    <ul>
+        <li id="card1" style="--i:1" onclick="aaclick('link1')">
+            <img src="../图片库/31.jpg">
+            <div class="content">
+                <h2>温迪</h2>
+                <h4>来源：原神</h4>
+                <p>
+                    introduce
+                    <span>2024.4.17</span>
+                </p>
+            </div>
+        </li>
+        <li id="card2" style="--i:2" onclick="aaclick('link2')">
+            <img src="../图片库/37.jpg">
+            <div class="content">
+                <h2>符华</h2>
+                <h4>来源：崩坏三</h4>
+                <p>
+                    introduce
+                    <span>2024.4.17</span>
+                </p>
+            </div>
+        </li>
+        <li id="card3" style="--i:3" onclick="aaclick('link3')">
+            <img src="../图片库/35.jpg">
+            <div class="content">
+                <h2>黑瞎子</h2>
+                <h4>来源：盗墓笔记</h4>
+                <p>
+                    introduce
+                    <span>2024.4.17</span>
+                </p>
+            </div>
+        </li>
+        <li id="card4" style="--i:4" onclick="aaclick('link4')">
+            <img src="../图片库/36.jpg">
+            <div class="content">
+                <h2>渚薰</h2>
+                <h4>来源：eva</h4>
+                <p>
+                    introduce
+                    <span>2024.4.17</span>
+                </p>
+            </div>
+        </li>
+        <li id="card5" style="--i:5" onclick="aaclick('link5')">
+            <img src="../图片库/强尼.jpg">
+            <div class="content">
+                <h2>强尼·银手</h2>
+                <h4>来源：赛博朋克2077</h4>
+                <p>
+                    introduce
+                    <span>2024.4.17</span>
+                </p>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>

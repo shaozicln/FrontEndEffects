@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./ok.css">
+    <script src="./ok.js"></script>
+</head>
+
+<body>
+    <h2>查找</h2>
+    <button onclick="check()">? 试试 ?</button>
+    <p id="write"></p>
+    <hr>
+
+
+    <h2>替换"sbo"为"hhuo"</h2>
+    <button style="color:rgb(18, 130, 228);background-color: aquamarine;" onclick="displace()">你，会找到答案吗</button>
+    <p id="replace-ans">我是sbo</p>
+    <hr>
+
+
+    <h2>查找 RegExp</h2>
+    <script>
+        let pat = new RegExp("e");
+        document.write(pat.test("112233eeeerrriiooo"));
+    </script>
+    <hr>
+    <button type="button" onclick="gb()">试试</button>
+    <p id="gbc">把我的颜色变成粗体红色</p>
+    <script>
+        document.write("<p>嘻嘻</p>");
+        function gb() {
+            let x = document.getElementById("gbc");
+            x.innerHTML = "谢谢你";
+            x.style = "color:red;font-weight:bold";
+        }
+    </script>
+    <hr>
+
+
+    <h2>点击图片变换</h2>
+    <script>
+        function changeImg1() {
+            x = document.getElementById("img1");
+            //if括号内为src属性中的字符串，且有则ok
+            if (x.src.match("edit")) {
+                x.src = "./intro-background.jpg";
+            }
+            else {
+                x.src = "./edit-background.jpg";
+            }
+        }
+    </script>
+    <img id="img1" onclick="changeImg1()" src="./edit-background.jpg">
+    <style>
+        #img1 {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+    <hr>
+
+
+    <h2>window用法</h2>
+    <button id="hello" type="button" onclick="sayHello()">sayHello</button>
+    <script>
+        function sayHello() {
+            window.alert("Hello World!");
+        }
+    </script>
+    <hr>
+    <h2>其他</h2>
+    <script>
+        document.write(Date());
+    </script>
+    <br>
+    <button id="hello" type="button" onclick="checkDate()">查看日期</button>
+    <script>
+        function checkDate() {
+            date.innerHTML = Date();
+            document.getElementById("date").innerHTML = Date();
+        }
+    </script>
+    <div id="date"></div>
+    <br>
+    <hr>
+
+
+    <h2>事件</h2>
+    <p id="btn1" onchange="changeBtn()" onclick="clickBtn()" onmouseover="mouseOver()" onmouseout="mouseOut()"
+        onkeydown="keyDown()" onload="loadPage()">点击变色</p>
+    <p id="btnp1"></p>
+    <script>
+        function changeBtn() {
+            document.getElementById("btn1").style = "background-color:red";
+        }
+        function clickBtn() {
+            document.getElementById("btn1").style = "background-color:blue";
+        }
+        function mouseOver() {
+            document.getElementById("btn1").style = "background-color:green";
+        }
+        function mouseOut() {
+            document.getElementById("btn1").style = "background-color:white";
+        }
+        function keyDown() {
+            document.getElementById("btnp1").innerHTML = "按下了";
+        }
+        function loadPage() {
+            document.getElementById("btnp1").innerHTML = "页面加载完成";
+        }
+
+    </script>
+    <hr>
+
+
+    <h2>JavaScript 模板字面量</h2>
+    <p>模板字面量使用反引号 (``) 来定义一个字符串:</p>
+    <p id="demo"></p>
+    <p id="aaa"></p>
+    <script>
+        let price = 10;
+        let VAT = 0.25;
+        let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+        document.getElementById("demo").innerHTML = total;
+        let ans = `结果：${(price * (1 + VAT)).toFixed(3)}`;
+        document.getElementById("aaa").innerHTML = ans;
+    </script>
+    <hr>
+
+    <h2>JavaScript 模板字面量</h2>
+    <p>模板字面量使用反引号 (``) 来定义一个字符串:</p>
+    <div id="demo2"></div>
+    <div id="demo3"></div>
+    <script>
+        let header = "这是一个列表";
+        let tags = ["RUNOOB", "GOOGLE", "TAOBAO"];
+        let html = `<h3>${header}</h3><ul>`;
+        for (const x of tags) {
+            html += `<li>${x}</li>`;
+        }
+        html += `</ul>`;
+        document.getElementById("demo2").innerHTML = html;
+
+        let header2 = "这是第二个列表";
+        let tag2 = ["a", "b", "c"];
+        let html2 = `<h3>${header2}</h3><ul>`;
+        for (const item of tag2) {
+            html2 += `<li>${item}</li>`;
+        }
+        html2 += `</ul>`;
+        document.getElementById("demo3").innerHTML = html2;
+    </script>
+    <hr>
+
+
+    <h2>for/in</h2>
+    <script>
+        let ans2 = "";
+        let p = { name: "cln", age: 20, sex: "girl" };
+        for (x in p) {
+            ans2 += p[x];
+            ans2 += "<br>";
+        }
+        document.write(ans2);
+    </script>
+    <hr>
+
+    <h2>列表break (continue)仅在循环中使用</h2>
+    <script>
+        let a = [0, 1, 2, 3, 4, 5];
+        list: {
+            document.write(a[0] + '<br>');
+            document.write(a[1] + '<br>');
+            document.write(a[2] + '<br>');
+            document.write(a[3] + '<br>');
+            break list;
+            document.write(a[4] + '<br>');
+        }
+        document.write(typeof (a[4]));
+    </script>
+    <hr>
+
+
+    <h2>判断是否为数组</h2>
+    <p id="demo4"></p>
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo4").innerHTML = pd(fruits);//调用函数判断是否为数组
+        function pd(a) {
+            return a.constructor.toString().indexOf("Array") > -1;
+        }
+    </script>
+    <hr>
+
+
+    <h2>错误处理</h2>
+    <script>
+        var txt = "";
+        function solve() {
+            try {
+                windw.alert("Welcome");
+            }
+            catch (errorr) {
+                txt = "本页有一个错误。\n";
+                txt += "错误描述：" + errorr + "\n";
+                txt += "点击确定继续。\n\n";
+                alert(txt);
+            }
+        }
+    </script>
+    <input type="button" value="查看消息" onclick="solve()" />
+    <br>
+
+    <h3>判断合法</h3>
+    <p>不管输入是否正确，输入框都会再输入后清空。</p>
+    <p>请输入 5 ~ 10 之间的数字：</p>
+    <input id="demo6" type="text">
+    <button type="button" onclick="lawful()">点我</button>
+    <p id="p01"></p>
+    <script>
+        function lawful() {
+            var message, x;
+            message = document.getElementById("p01");
+            message.innerHTML = "";
+            x = document.getElementById("demo6").value;
+            try {
+                if (x == "") throw "值是空的";
+                if (isNaN(x)) throw "值不是一个数字";
+                x = Number(x);
+                if (x > 10) throw "太大";
+                if (x < 5) throw "太小";
+            }
+            catch (err) {
+                message.innerHTML = "错误: " + err + ".";
+            }
+            finally {
+                document.getElementById("demo6").value = "";
+            }
+        }
+    </script>
+
+    <h2>调试</h2>
+    <p id="demo"></p>
+    <p>开启调试工具，在代码执行到第三行前会停止执行。</p>
+    <script>
+        var x = 15 * 5;
+        debugger;
+        document.getElementById("demo").innerHTML = x;
+    </script>
+
+    <h2>按钮次数</h2>
+    <button id="SumBtn" onclick="Sum()">1</button>
+    <script>
+        let sum = 1;
+        function Sum() {
+            sum++;
+            //textContent属性：将该元素的文本内容设置为变量sum的值
+            document.getElementById("SumBtn").textContent = sum;
+            if (sum === 6) {
+                document.getElementById("SumBtn").style.display = "none";
+            }
+        }
+    </script>
+    <hr>
+
+
+    <h2>表单验证</h2>
+    <form name="myForm" action="demo_form.php" onclick="return validateForm()" method="post">
+        名字: <input type="text" name="fname" id="fname" required="required">
+        <!-- required属性：规定输入框不能为空 -->
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        function validateForm() {
+            // var x = document.getElementById("fname").value;
+            //使用表单的name的引用
+            var x = document.forms["myForm"]["fname"].value;
+            if (x == null || x == "") {
+                alert("需要输入名字。");
+                return false;
+            }
+        }
+    </script>
+    <hr>
+
+
+    <h2>输入数字并点击验证按钮:</h2>
+    <input id="id1" type="number" min="100" max="300" required>
+    <button onclick="myFunction()">验证</button>
+
+    <p>如果输入的数字小于 100 或大于300，会提示错误信息。</p>
+
+    <p id="p1"></p>
+
+    <script>
+        function myFunction() {
+            var c = document.getElementById("id1");
+            //checkValidity()方法：检查输入字段是否有效
+            if (c.checkValidity() == false) {
+                document.getElementById("p1").innerHTML = c.validationMessage;
+                //validationMessage属性：返回输入字段的验证消息
+            } else {
+                document.getElementById("p1").innerHTML = "输入正确";
+            }
+        }
+    </script>
+    <hr>
+
+
+    <h2>回调函数等待 3 秒后执行。</h2>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <script>
+        function print() {
+            document.getElementById("p2").innerHTML = "RUNOOB3!";
+        }
+        setTimeout(print, 3000);
+
+        setTimeout(function () {
+            document.getElementById("p3").innerHTML = "RUNOOB2!";
+        }, 2000);
+
+        document.getElementById("p4").innerHTML = "RUNOOB1!";
+    </script>
+
+</body>
+
+</html>

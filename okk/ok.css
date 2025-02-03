@@ -1,0 +1,7 @@
+body{
+    background:linear-gradient(300deg,orange,rgb(255, 234, 0));
+}
+#hello{
+    color:black;
+    background-color: pink;
+}

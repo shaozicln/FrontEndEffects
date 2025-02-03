@@ -1,0 +1,94 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to top, #e6e20f, #e7e754);
+}
+
+#card1{
+    background-image: url(./edit-background.jpg);
+}
+#card6{
+    background-image: url(./intro-background.jpg);
+}
+#card3{
+    background-image: url(../图片库/31.jpg);
+}
+#card4{
+    background-image: url(../图片库/37.jpg);
+}
+#card5{
+    background-image: url(../图片库/35.jpg);
+}
+#card2{
+    background-image: url(../图片库/36.jpg);
+}
+
+.allcon{
+    display:grid;
+    grid-template-rows: 2;
+}
+
+.introduce{
+    display: none;
+}
+
+#top{
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#text{
+    grid-row: 1;
+    height:5em;
+    margin:5px;
+}
+
+.con{
+    grid-row:2;
+    height:auto;
+}
+
+#con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+.card{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height:80vh;
+    width:50px;
+    cursor: pointer;
+    flex:0.5;
+    border-radius: 10px;
+    transition: 1s;
+    margin:10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+}
+.card:hover{
+    /* 占屏幕比例 */
+    flex-basis: 40%;
+}
+#text:nth-child(2){
+    display:none;
+
+}
+
+.introduce{
+    transition: all 0.5s ease-in-out;
+}
+
+/* .card-img{
+    object-fit: cover;/* 防止图片被挤压
+ } */ 

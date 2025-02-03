@@ -1,0 +1,20 @@
+{
+    "animal":{
+        "dog":[
+            {
+                "name" : "www",
+                "age"  :  10
+            },
+            {
+                "name" : "mmm",
+                "age"  :  1
+            }
+        ],
+        "cat":[
+            {
+                "name" : "aaa",
+                "age"  :  2
+            }
+        ]
+    }
+}
